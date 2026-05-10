@@ -72,10 +72,34 @@ conda env create -f lv_env.yml
 conda env create -f pv_env.yml
 ```
 **2. Select study area**
+The study area is defined using a user-created polygon in WGS84 format, which is imported within the execution of GeoDAQ.ipynb for further processing. The polygon serves as the spatial boundary for the data acquisition process. Based on this area of interest, relevant OpenStreetMap (OSM) features located within the polygon are automatically retrieved, including:<br/>
+- building footprints
+- road networks
 
 **3. Set parameters**
+The workflow behavior can be configured through the `parameters.py` file. This central configuration file contains all project-specific settings, file paths, technical assumptions, and model parameters required for the generation of synthetic low-voltage-grids.<br/>
 
-**4. Execute the workflow**
+- **Project and export settings**<br/>
+  - project name
+  - output directories
+  - file names and data structure
+- **Transformer configuration**<br/>
+  - available transformer rated powers
+  - transformer workload assumptions
+  - power factor settings
+- **Parameters for load estimation**<br/>
+  - average household size
+  - energy consumption assumptions
+  - building-related demand parameters
+  - minimum building dimensions
+
+**4. Execute the workflow**<br/>
+Run the notebooks in the following order:<br/>
+
+1. GeoDAQ.ipynb – data acquisition and preprocessing<br/>
+2. GeoGraphModel.ipynb – graph construction<br/>
+3. GeoGridModel.ipynb – grid synthesis<br/>
+4. GeoPVModel.ipynb – PV integration and extension<br/>
 
 **5. Results**
 
