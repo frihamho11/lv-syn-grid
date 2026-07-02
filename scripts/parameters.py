@@ -15,7 +15,7 @@ import os
 from collections import namedtuple
 
 # ******************* project specific parameters *******************
-PROJECT = 'Test'   # <-- change for project
+PROJECT = 'Grossschoenau_original'   # <-- change for project
 
 # folder structure for data export
 FILEPATH_DATA = 'grids/' + PROJECT + '/data/'
